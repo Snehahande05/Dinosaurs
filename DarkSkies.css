@@ -1,0 +1,184 @@
+/* Fonts and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Orbitron', sans-serif;
+    background: #f4f1ea;
+    color: #3a2e22;
+    line-height: 1.7;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #5a4631;
+    padding: 1rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #f5d185;
+    letter-spacing: 2px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #f5d185;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #fff3e0;
+  }
+  
+  /* Hero Section */
+  .stage-hero {
+    position: relative;
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1611324296682-27345c32a9dc') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .stage-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 28, 15, 0.6);
+    z-index: 1;
+  }
+  
+  .stage-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+  
+  .stage-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 3px;
+  }
+  
+  .stage-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .stage-content p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Stage Description */
+  .stage-description {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #f3e8d0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(90, 70, 49, 0.3);
+  }
+  
+  .stage-description h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: #5a4631;
+  }
+  
+  .stage-description p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #3a2e22;
+  }
+  
+  .highlight-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .highlight-list li {
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Button */
+  .btn-container {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .journey-btn {
+    background: #5a4631;
+    color: #f5d185;
+    padding: 0.7rem 2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .journey-btn:hover {
+    background: #3a2e22;
+  }
+  
+  /* Footer */
+  footer {
+    background: #5a4631;
+    color: #f5d185;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+  }
+  
+  .footer-links {
+    margin-top: 1rem;
+  }
+  
+  .footer-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #f5d185;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #fff3e0;
+  }
+
+  .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index:0;
+  }
+  
+  

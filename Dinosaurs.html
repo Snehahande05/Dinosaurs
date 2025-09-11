@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dino Extinct</title>
+  <link rel="stylesheet" href="Dinosaurs.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Dino Extinct</div>
+    <ul class="nav-links">
+      <li><a href="Dinosaurs.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Stages.html">Stages</a></li>
+      <li><a href="SignIn.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="Images/BackGround.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Dino Extinct</h1>
+      <p>When giants ruled the Earth… until silence took over.</p>
+      <a href="#timeline" class="cta-button">Explore Extinction</a>
+    </div>
+  </header>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="sounds/Home.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">National Geo</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-audio");
+      // Try to play audio on load
+      const playPromise = audio.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented — show a play button
+          const playBtn = document.createElement("button");
+          playBtn.textContent = "🔊 Enable Sound";
+          playBtn.style.position = "fixed";
+          playBtn.style.top = "20px";
+          playBtn.style.right = "20px";
+          playBtn.style.padding = "10px 20px";
+          playBtn.style.background = "#3a2e22";
+          playBtn.style.color = "#f5d185";
+          playBtn.style.border = "none";
+          playBtn.style.borderRadius = "15px";
+          playBtn.style.cursor = "pointer";
+          playBtn.style.zIndex = "9999";
+  
+          document.body.appendChild(playBtn);
+  
+          playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.remove();
+          });
+        });
+      }
+    });
+  </script>
+  
+</body>
+</html>

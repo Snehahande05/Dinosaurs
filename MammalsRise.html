@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stage 7: Mammals Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="MammalsRise.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Dino Extinct</div>
+    <ul class="nav-links">
+      <li><a href="Dinosaurs.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Stages.html">Stages</a></li>
+      <li><a href="SignIn.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <header class="stage-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="Images/Wooly Mamoth.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="stage-overlay"></div>
+    <div class="stage-content">
+      <h1>Stage 7</h1>
+      <h2>Mammals Rise</h2>
+      <p>The dawn of mammals reshaped Earth's ecosystems after the dinosaur extinction.</p>
+    </div>
+  </header>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="Sounds/Mammals Rise.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="stage-description">
+    <h3>Overview</h3>
+    <p>
+      After the mass extinction event, mammals seized the opportunity to thrive. From small, nocturnal creatures to the eventual emergence of primates and humans, this stage highlights the adaptive nature of mammals and their dominance across the globe.
+    </p>
+
+    <h3>Key Mammals</h3>
+    <ul class="dino-list">
+      <li><strong>Woolly Mammoth</strong> – Giant herbivore of the Ice Age.</li>
+      <li><strong>Saber-toothed Cat</strong> – Fierce predator with massive canines.</li>
+      <li><strong>Indricotherium</strong> – One of the largest land mammals ever.</li>
+      <li><strong>Early Primates</strong> – Ancestors of modern humans.</li>
+    </ul>
+
+    <h3>Timeline</h3>
+    <p>This stage spans from 66 million years ago to the present, covering the Cenozoic Era.</p>
+
+    <div class="explore-btn-container">
+      <a href="FossilDiscoveries.html" class="explore-btn">Next Stage -> </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">National Geo</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-audio");
+      // Try to play audio on load
+      const playPromise = audio.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented — show a play button
+          const playBtn = document.createElement("button");
+          playBtn.textContent = "🔊 Enable Sound";
+          playBtn.style.position = "fixed";
+          playBtn.style.top = "20px";
+          playBtn.style.right = "20px";
+          playBtn.style.padding = "10px 20px";
+          playBtn.style.background = "#3a2e22";
+          playBtn.style.color = "#f5d185";
+          playBtn.style.border = "none";
+          playBtn.style.borderRadius = "15px";
+          playBtn.style.cursor = "pointer";
+          playBtn.style.zIndex = "9999";
+  
+          document.body.appendChild(playBtn);
+  
+          playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.remove();
+          });
+        });
+      }
+    });
+  </script>
+  
+
+</body>
+</html>

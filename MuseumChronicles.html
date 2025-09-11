@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stage 9: Museum Chronicles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="MuseumChronicles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Dino Extinct</div>
+    <ul class="nav-links">
+      <li><a href="Dinosaurs.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Stages.html">Stages</a></li>
+      <li><a href="SignIn.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <header class="stage-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="Images/Museum.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="stage-overlay"></div>
+    <div class="stage-content">
+      <h1>Stage 9</h1>
+      <h2>Museum Chronicles</h2>
+      <p>Where fossils come alive and history is retold through ancient bones.</p>
+    </div>
+  </header>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="Sounds/Museum Chronicles.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <section class="stage-description">
+    <h3>Overview</h3>
+    <p>
+      The Museum Chronicles represent our modern quest to preserve and understand the past. Fossils unearthed across continents are carefully displayed in museums, telling the story of Earth's ancient giants. These institutions are hubs of education, awe, and scientific inquiry, bridging time between extinction and discovery.
+    </p>
+
+    <h3>Exhibit Highlights</h3>
+    <ul class="dino-list">
+      <li><strong>T-Rex Skeletons</strong> – Towering fossils that dominate exhibition halls.</li>
+      <li><strong>Interactive Displays</strong> – AR and VR models that bring dinosaurs to life.</li>
+      <li><strong>Fossil Labs</strong> – Glimpses into paleontologists at work.</li>
+      <li><strong>Dioramas</strong> – Artistic recreations of prehistoric life.</li>
+    </ul>
+
+    <h3>Impact</h3>
+    <p>
+      Museums preserve more than fossils — they safeguard the curiosity of future generations. Through education and immersive experiences, the legacy of dinosaurs continues to evolve in the human imagination.
+    </p>
+
+    <div class="explore-btn-container">
+      <a href="JurassicLegacy.html" class="explore-btn"> The Last Stage -> </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">National Geo</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-audio");
+      // Try to play audio on load
+      const playPromise = audio.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented — show a play button
+          const playBtn = document.createElement("button");
+          playBtn.textContent = "🔊 Enable Sound";
+          playBtn.style.position = "fixed";
+          playBtn.style.top = "20px";
+          playBtn.style.right = "20px";
+          playBtn.style.padding = "10px 20px";
+          playBtn.style.background = "#3a2e22";
+          playBtn.style.color = "#f5d185";
+          playBtn.style.border = "none";
+          playBtn.style.borderRadius = "15px";
+          playBtn.style.cursor = "pointer";
+          playBtn.style.zIndex = "9999";
+  
+          document.body.appendChild(playBtn);
+  
+          playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.remove();
+          });
+        });
+      }
+    });
+  </script>
+  
+
+</body>
+</html>

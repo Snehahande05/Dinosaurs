@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stage 5: Aftermath & Extinction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="MassExtinction.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Dino Extinct</div>
+        <ul class="nav-links">
+          <li><a href="Dinosaurs.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Stages.html">Stages</a></li>
+          <li><a href="SignIn.html">Sign In</a></li>
+        </ul>
+      </nav>
+
+  <header class="stage-hero">
+    <div class="stage-overlay"></div>
+    <div class="stage-content">
+      <h1>Stage 5</h1>
+      <h2>Aftermath & Extinction</h2>
+      <p>Silence reigned. The era of dinosaurs ended, but life began anew.</p>
+    </div>
+  </header>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="Sounds/MassExtension.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="stage-description">
+    <h3>Overview</h3>
+    <p>
+      After the catastrophic impact, Earth's environment changed drastically. With no sunlight, temperatures dropped, ecosystems collapsed, and dinosaurs along with 75% of all life went extinct. But this marked the beginning of a new chapter—mammals rose, and evolution found a new path.
+    </p>
+
+    <h3>Key Consequences</h3>
+    <ul class="dino-list">
+      <li><strong>Mass Extinction</strong> – Most dinosaur species perished along with countless marine and terrestrial organisms.</li>
+      <li><strong>Climate Collapse</strong> – Drastic cooling and acid rain altered the planet's climate for decades.</li>
+      <li><strong>Rise of Mammals</strong> – With dinosaurs gone, mammals diversified and slowly became the dominant species.</li>
+    </ul>
+
+    <h3>Legacy</h3>
+    <p>
+      Though dinosaurs are extinct, their legacy lives on in birds, their closest modern descendants. The end of dinosaurs was not just an end—it was a beginning.
+    </p>
+
+    <div class="explore-btn-container">
+      <a href="IceAgeEmergence.html" class="explore-btn">Next Stage -> </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">National Geo</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-audio");
+      // Try to play audio on load
+      const playPromise = audio.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented — show a play button
+          const playBtn = document.createElement("button");
+          playBtn.textContent = "🔊 Enable Sound";
+          playBtn.style.position = "fixed";
+          playBtn.style.top = "20px";
+          playBtn.style.right = "20px";
+          playBtn.style.padding = "10px 20px";
+          playBtn.style.background = "#3a2e22";
+          playBtn.style.color = "#f5d185";
+          playBtn.style.border = "none";
+          playBtn.style.borderRadius = "15px";
+          playBtn.style.cursor = "pointer";
+          playBtn.style.zIndex = "9999";
+  
+          document.body.appendChild(playBtn);
+  
+          playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.remove();
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

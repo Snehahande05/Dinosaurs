@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Extinct</title>
+    <link rel="stylesheet" href="Dinosaurs.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Dino Extinct</div>
+    <ul class="nav-links">
+      <li><a href="Dinosaurs.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Stages.html">Stages</a></li>
+      <li><a href="SignIn.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <!-- Timeline Section -->
+  <section class="episodes" id="timeline">
+    <h2>Timeline to Extinction</h2>
+    <div class="episode-list">
+      <a href="AgeOfGiants.html" class="episode-card">Stage 1: The Age of Giants</a>
+  <a href="VolcanicEruptions.html" class="episode-card">Stage 2: Volcanic Eruptions</a>
+  <a href="MeteorImpact.html" class="episode-card">Stage 3: Meteor Impact</a>
+  <a href="DarkSkies.html" class="episode-card">Stage 4: Dark Skies</a>
+  <a href="MassExtinction.html" class="episode-card">Stage 5: Mass Extinction</a>
+
+  <div class="more-episodes hidden">
+    <a href="IceAgeEmergence.html" class="episode-card">Stage 6: Ice Age Emergence</a>
+    <a href="MammalsRise.html" class="episode-card">Stage 7: Mammals Rise</a>
+    <a href="FossilDiscoveries.html" class="episode-card">Stage 8: Fossil Discoveries</a>
+    <a href="MuseumChronicles.html" class="episode-card">Stage 9: Museum Chronicles</a>
+    <a href="JurassicLegacy.html" class="episode-card">Stage 10: Jurassic Legacy</a>
+  </div>
+
+    <button class="more-btn" onclick="toggleEpisodes()">Show More</button>
+    </div>
+  </section>
+
+  <script>
+    function toggleEpisodes() {
+      const hidden = document.querySelector('.more-episodes');
+      hidden.classList.toggle('hidden');
+      const btn = document.querySelector('.more-btn');
+      btn.textContent = hidden.classList.contains('hidden') ? 'Show More' : 'Show Less';
+    }
+  </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">National Geo</a>
+        </div>
+      </footer>
+
+</body>
+</html>

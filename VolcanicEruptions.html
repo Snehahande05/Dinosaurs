@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stage 2: Volcanic Eruptions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="VolcanicEruptions.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Dino Extinct</div>
+        <ul class="nav-links">
+          <li><a href="Dinosaurs.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Stages.html">Stages</a></li>
+          <li><a href="SignIn.html">Sign In</a></li>
+        </ul>
+      </nav>
+
+  <header class="stage-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="Images/VC.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="stage-overlay"></div>
+    <div class="stage-content">
+      <h1>Stage 2</h1>
+      <h2>Volcanic Eruptions</h2>
+      <p>Cataclysmic eruptions reshaped the Earth and disrupted life forever.</p>
+    </div>
+  </header>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="Sounds/VolcanicEruption.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="stage-description">
+    <h3>Overview</h3>
+    <p>
+      Massive volcanic eruptions released tremendous amounts of lava, ash, and gases into the atmosphere. This led to climate changes, acid rain, and toxic air, creating a hostile environment for many species, including dinosaurs.
+    </p>
+
+    <h3>Key Events</h3>
+    <ul class="dino-list">
+      <li><strong>Deccan Traps Formation</strong> – One of the largest volcanic features on Earth.</li>
+      <li><strong>SO₂ and CO₂ Emissions</strong> – Contributed to long-term warming and acidification.</li>
+      <li><strong>Wildfires and Famine</strong> – Immediate aftermath of environmental collapse.</li>
+    </ul>
+
+    <h3>Timeline</h3>
+    <p>This stage is estimated to have occurred around 66 million years ago, just before the meteor impact.</p>
+
+    <div class="explore-btn-container">
+      <a href="MeteorImpact.html" class="explore-btn">Next Stage -></a>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">National Geo</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-audio");
+      // Try to play audio on load
+      const playPromise = audio.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented — show a play button
+          const playBtn = document.createElement("button");
+          playBtn.textContent = "🔊 Enable Sound";
+          playBtn.style.position = "fixed";
+          playBtn.style.top = "20px";
+          playBtn.style.right = "20px";
+          playBtn.style.padding = "10px 20px";
+          playBtn.style.background = "#3a2e22";
+          playBtn.style.color = "#f5d185";
+          playBtn.style.border = "none";
+          playBtn.style.borderRadius = "15px";
+          playBtn.style.cursor = "pointer";
+          playBtn.style.zIndex = "9999";
+  
+          document.body.appendChild(playBtn);
+  
+          playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.remove();
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stage 1: Age of Giants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="AgeOfGiants.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Dino Extinct</div>
+    <ul class="nav-links">
+      <li><a href="Dinosaurs.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Stages.html">Stages</a></li>
+      <li><a href="SignIn.html">Sign In</a></li>
+    </ul>
+  </nav>
+
+  <header class="stage-hero">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="Images/Age of giants.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="stage-overlay"></div>
+    <div class="stage-content">
+      <h1>Stage 1</h1>
+      <h2>Age of Giants</h2>
+      <p>The majestic reign of the colossal beings that once roamed Earth.</p>
+    </div>
+  </header>
+
+  <audio id="bg-audio" loop autoplay>
+    <source src="Sounds/AgeOfGiants.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <section class="stage-description">
+    <h3>Overview</h3>
+    <p>
+      The Age of Giants marks a primeval era when Earth's ecosystems were dominated by enormous dinosaurs. From the towering Brachiosaurus to the ferocious Tyrannosaurus Rex, this stage witnessed the rise of reptilian titans. Their existence shaped prehistoric landscapes, and their fossils whisper tales of power, survival, and extinction.
+    </p>
+
+    <h3>Key Dinosaurs</h3>
+    <ul class="dino-list">
+      <li><strong>Tyrannosaurus Rex</strong> – Apex predator with unmatched strength.</li>
+      <li><strong>Brachiosaurus</strong> – Gentle herbivore towering over forests.</li>
+      <li><strong>Triceratops</strong> – Horned herbivore with iconic frill.</li>
+      <li><strong>Stegosaurus</strong> – Plated back and spiked tail warrior.</li>
+    </ul>
+
+    <h3>Timeline</h3>
+    <p>This stage belongs to the Late Jurassic and Early Cretaceous periods, roughly 155 to 100 million years ago.</p>
+
+    <div class="explore-btn-container">
+      <a href="VolcanicEruptions.html" class="explore-btn">Next Stage -> </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dino Extinct. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+      <a href="#">National Geo</a>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      const audio = document.getElementById("bg-audio");
+      // Try to play audio on load
+      const playPromise = audio.play();
+  
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Autoplay was prevented — show a play button
+          const playBtn = document.createElement("button");
+          playBtn.textContent = "🔊 Enable Sound";
+          playBtn.style.position = "fixed";
+          playBtn.style.top = "20px";
+          playBtn.style.right = "20px";
+          playBtn.style.padding = "10px 20px";
+          playBtn.style.background = "#3a2e22";
+          playBtn.style.color = "#f5d185";
+          playBtn.style.border = "none";
+          playBtn.style.borderRadius = "15px";
+          playBtn.style.cursor = "pointer";
+          playBtn.style.zIndex = "9999";
+  
+          document.body.appendChild(playBtn);
+  
+          playBtn.addEventListener("click", () => {
+            audio.play();
+            playBtn.remove();
+          });
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
